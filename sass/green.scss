@@ -1,0 +1,644 @@
+@import "compass";
+@import 'partials/mixin';
+
+
+// green
+$bodyColor: #121312;
+$bodyLinkColor: #88ad25;
+$bodyLinkVisitedColor: #93931d;
+$bodyLinkHoverColor: #80cd45;
+
+// markup
+$markBgColor: #26d926;
+$insBgColor: #cdf5c9;
+
+// input
+$inputBorderColor: #c1d0be;
+$inputColor: #121312;
+$inputFocusBorderColor: #b0bfae;
+$inputPlaceholderColor: #707a6f;
+
+// buttons
+$buttonBgColorGradientStart: #9ac43e;
+$buttonBgColorGradientEnd: #97bb2f;
+$buttonColor: #fff;
+$buttonBottomBorderColor: #7f9e21;
+
+$buttonHoverBgColorGradientStart: #a9d14d;
+$buttonHoverBgColorGradientEnd: #a7c943;
+
+$buttonActiveBgColorGradientStart: #97bb2f;
+$buttonActiveBgColorGradientEnd: #7f9e21;
+$buttonActiveBorderTopColor: #7f9e21;
+
+$captionColor: #1f1e11;
+$captionBgColor: inherit;
+$homeLinkColor: #121312;
+
+// menu
+$menuBgColor: #eaf4e9;
+$menuLinkColor: #121312;
+$menuHoverBgColor: #1f1e11;
+$menuHoverColor: #fff;
+
+$subMenuBgColor: #1f1e11;
+$subMenuBorderColor: #eaf4e9;
+$subMenuHoverBgColor: #a5c148;
+
+$menuSelectedItemColor: #82a124;
+
+// search
+$searchFieldFocusBorderColor: #b0bfae;
+$searchIconColor: red;
+
+// page links
+$pageLinkColor: inherit;
+$pageLinkBgColor: #bbca46;
+$pageLinkBorderColor: #bbca46;
+
+$pageLinkHoverColor: #bbca46;
+$pageLinkHoverBgColor: #fff;
+
+$pageLinkSelectedColor: inherit;
+$pageLinkSelectedBgColor: transparent;
+
+// default
+$formatEntryTitleColor: inherit;
+$formatEntryTitleBgColor: inherit;
+$formatEntryTitleLinkColor: #121312;
+$formatEntryTitleLinkHoverColor: #80cd45;
+
+$formatEntryContentColor: inherit;
+$formatEntryContentBgColor: inherit;
+$formatEntryContentLinkColor: #82a124;
+$formatEntryContentLinkHoverColor: #80cd45;
+
+$formatEntryMetaColor: inherit;
+$formatEntryMetaBgColor: inherit;
+$formatEntryMetaLinkColor: #82a124;
+$formatEntryMetaLinkHoverColor: #82a124;
+
+
+// aside
+$formatAsideBoxShowColor: rgba(121, 163, 115, 0.2);
+
+$formatAsideTitleColor: inherit;
+$formatAsideTitleBgColor: inherit;
+$formatAsideTitleLinkColor: inherit;
+$formatAsideTitleLinkHoverColor: inherit;
+
+$formatAsideContentColor: inherit;
+$formatAsideContentBgColor: #eaf4e9;
+$formatAsideContentLinkColor: inherit;
+$formatAsideContentLinkHoverColor: inherit;
+
+$formatAsideMetaColor: inherit;
+$formatAsideMetaBgColor: inherit;
+$formatAsideMetaLinkColor: inherit;
+$formatAsideMetaLinkHoverColor: inherit;
+
+// audio
+$formatAudioTitleColor: inherit;
+$formatAudioTitleBgColor: inherit;
+$formatAudioTitleLinkColor: inherit;
+$formatAudioTitleLinkHoverColor: inherit;
+
+$formatAudioContentColor: inherit;
+$formatAudioContentBgColor: inherit;
+$formatAudioContentLinkColor: inherit;
+$formatAudioContentLinkHoverColor: inherit;
+
+$formatAudioMetaColor: inherit;
+$formatAudioMetaBgColor: inherit;
+$formatAudioMetaLinkColor: inherit;
+$formatAudioMetaLinkHoverColor: inherit;
+
+// chat
+$formatChatTitleColor: inherit;
+$formatChatTitleBgColor: inherit;
+$formatChatTitleLinkColor: inherit;
+$formatChatTitleLinkHoverColor: inherit;
+
+$formatChatContentColor: inherit;
+$formatChatContentBgColor: inherit;
+$formatChatContentLinkColor: inherit;
+$formatChatContentLinkHoverColor: inherit;
+
+$formatChatMetaColor: inherit;
+$formatChatMetaBgColor: inherit;
+$formatChatMetaLinkColor: inherit;
+$formatChatMetaLinkHoverColor: inherit;
+
+// galelry
+$formatGalleryTitleColor: inherit;
+$formatGalleryTitleBgColor: inherit;
+$formatGalleryTitleLinkColor: inherit;
+$formatGalleryTitleLinkHoverColor: inherit;
+
+$formatGalleryContentColor: inherit;
+$formatGalleryContentBgColor: inherit;
+$formatGalleryContentLinkColor: inherit;
+$formatGalleryContentLinkHoverColor: inherit;
+
+$formatGalleryMetaColor: inherit;
+$formatGalleryMetaBgColor: inherit;
+$formatGalleryMetaLinkColor: inherit;
+$formatGalleryMetaLinkHoverColor: inherit;
+
+// image
+$formatImageTitleColor: inherit;
+$formatImageTitleBgColor: inherit;
+$formatImageTitleLinkColor: inherit;
+$formatImageTitleLinkHoverColor: inherit;
+
+$formatImageContentColor: inherit;
+$formatImageContentBgColor: inherit;
+$formatImageContentLinkColor: inherit;
+$formatImageContentLinkHoverColor: inherit;
+
+$formatImageMetaColor: inherit;
+$formatImageMetaBgColor: inherit;
+$formatImageMetaLinkColor: inherit;
+$formatImageMetaLinkHoverColor: inherit;
+
+// link
+$formatLinkTitleColor: inherit;
+$formatLinkTitleBgColor: inherit;
+$formatLinkTitleLinkColor: inherit;
+$formatLinkTitleLinkHoverColor: inherit;
+
+$formatLinkContentColor: inherit;
+$formatLinkContentBgColor: inherit;
+$formatLinkContentLinkColor: inherit;
+$formatLinkContentLinkHoverColor: inherit;
+
+$formatLinkMetaColor: inherit;
+$formatLinkMetaBgColor: inherit;
+$formatLinkMetaLinkColor: inherit;
+$formatLinkMetaLinkHoverColor: inherit;
+
+// quote
+$formatQuoteTitleColor: inherit;
+$formatQuoteTitleBgColor: inherit;
+$formatQuoteTitleLinkColor: inherit;
+$formatQuoteTitleLinkHoverColor: inherit;
+
+$formatQuoteContentColor: inherit;
+$formatQuoteContentBgColor: inherit;
+$formatQuoteContentLinkColor: inherit;
+$formatQuoteContentLinkHoverColor: inherit;
+
+$formatQuoteMetaColor: inherit;
+$formatQuoteMetaBgColor: inherit;
+$formatQuoteMetaLinkColor: inherit;
+$formatQuoteMetaLinkHoverColor: inherit;
+
+// status
+$formatStatusTitleColor: inherit;
+$formatStatusTitleBgColor: inherit;
+$formatStatusTitleLinkColor: inherit;
+$formatStatusTitleLinkHoverColor: inherit;
+
+$formatStatusContentColor: inherit;
+$formatStatusContentBgColor: inherit;
+$formatStatusContentLinkColor: inherit;
+$formatStatusContentLinkHoverColor: inherit;
+
+$formatStatusMetaColor: inherit;
+$formatStatusMetaBgColor: inherit;
+$formatStatusMetaLinkColor: inherit;
+$formatStatusMetaLinkHoverColor: inherit;
+
+// video
+$formatVideoTitleColor: inherit;
+$formatVideoTitleBgColor: inherit;
+$formatVideoTitleLinkColor: inherit;
+$formatVideoTitleLinkHoverColor: inherit;
+
+$formatVideoContentColor: inherit;
+$formatVideoContentBgColor: inherit;
+$formatVideoContentLinkColor: inherit;
+$formatVideoContentLinkHoverColor: inherit;
+
+$formatVideoMetaColor: inherit;
+$formatVideoMetaBgColor: inherit;
+$formatVideoMetaLinkColor: inherit;
+$formatVideoMetaLinkHoverColor: inherit;
+
+
+
+
+body {
+	color: $bodyColor;
+	a {
+		color: $bodyLinkColor;
+	}
+	a:visited {
+		color: $bodyLinkVisitedColor;
+	}
+	a:active,
+	a:hover {
+		color: $bodyLinkHoverColor;
+	}
+	mark {
+		background: $markBgColor;
+	}
+	ins {
+		background: $insBgColor;
+	}
+	button,
+	input,
+	textarea {
+		border: 2px solid $inputBorderColor;
+	}
+	input,
+	textarea {
+		color: $inputColor;
+	}
+	input:focus,
+	textarea:focus {
+		border: 2px solid $inputFocusBorderColor;
+	}
+	button,
+	input[type="submit"],
+	input[type="button"],
+	input[type="reset"] {
+		@include background ( 
+			linear-gradient(bottom, $buttonBgColorGradientStart 0%, $buttonBgColorGradientEnd 100%)
+		);
+		border: none;
+		border-bottom: 3px solid $buttonBottomBorderColor;
+		color: $buttonColor;
+	}
+	button:hover,
+	button:focus,
+	input[type="submit"]:hover,
+	input[type="button"]:hover,
+	input[type="reset"]:hover,
+	input[type="submit"]:focus,
+	input[type="button"]:focus,
+	input[type="reset"]:focus {
+		background: $buttonHoverBgColorGradientStart;
+		@include background ( 
+			linear-gradient(bottom, $buttonHoverBgColorGradientStart 0%, $buttonHoverBgColorGradientEnd 100%)
+		);
+	}
+	button:active,
+	input[type="submit"]:active,
+	input[type="button"]:active,
+	input[type="reset"]:active {
+		background: $buttonActiveBgColorGradientStart;
+		@include background ( 
+			linear-gradient(bottom, $buttonActiveBgColorGradientStart 0%, $buttonActiveBgColorGradientEnd 100%)
+		);
+		border-top: 3px solid $buttonActiveBorderTopColor;
+	}
+	@include input-placeholder {
+            color: $inputPlaceholderColor;
+        }
+	
+	.wp-caption .wp-caption-text,
+	.entry-caption,
+	.gallery-caption {
+		color: $captionColor;
+		background-color: $captionBgColor;
+	}
+	
+	.site-header .home-link {
+		color: $homeLinkColor;
+	}
+	
+	.nav-menu li a {
+		color: $menuLinkColor;
+	}
+	.nav-menu li:hover > a,
+	.nav-menu li a:hover {
+		background-color: $menuHoverBgColor;
+		color: $menuHoverColor;
+	}
+
+	.nav-menu .sub-menu,
+	.nav-menu .children {
+		background-color: $subMenuBgColor;
+		border-color: $subMenuBorderColor;
+	}
+	ul.nav-menu ul a:hover,
+	.nav-menu ul ul a:hover {
+		background-color: $subMenuHoverBgColor;
+	}
+	.nav-menu .current_page_item > a,
+	.nav-menu .current_page_ancestor > a,
+	.nav-menu .current-menu-item > a,
+	.nav-menu .current-menu-ancestor > a {
+		color: $menuSelectedItemColor;
+	}
+	.navbar {
+		background-color: $menuBgColor;
+	}
+	.site-header .search-field:focus {
+		border-color: $searchFieldFocusBorderColor;
+	}
+	.search-form .screen-reader-text:before {
+		color: $searchIconColor;
+	}
+	
+	// default
+	@include format-contents($formatEntryTitleColor,
+		$formatEntryTitleBgColor,
+		$formatEntryTitleLinkColor,
+		$formatEntryTitleLinkHoverColor,
+		$formatEntryContentColor,
+		$formatEntryContentBgColor,
+		$formatEntryContentLinkColor,
+		$formatEntryContentLinkHoverColor,
+		$formatEntryMetaColor,
+		$formatEntryMetaBgColor,
+		$formatEntryMetaLinkColor,
+		$formatEntryMetaLinkHoverColor);
+	
+
+	// aside audio chat galelry image link quote status video
+	@include format-contents("aside", 
+		$formatAsideTitleColor,
+		$formatAsideTitleBgColor,
+		$formatAsideTitleLinkColor,
+		$formatAsideTitleLinkHoverColor,
+		$formatAsideContentColor,
+		$formatAsideContentBgColor,
+		$formatAsideContentLinkColor,
+		$formatAsideContentLinkHoverColor,
+		$formatAsideMetaColor,
+		$formatAsideMetaBgColor,
+		$formatAsideMetaLinkColor,
+		$formatAsideMetaLinkHoverColor);
+	
+	@include format-contents("audio", 
+		$formatAudioTitleColor,
+		$formatAudioTitleBgColor,
+		$formatAudioTitleLinkColor,
+		$formatAudioTitleLinkHoverColor,
+		$formatAudioContentColor,
+		$formatAudioContentBgColor,
+		$formatAudioContentLinkColor,
+		$formatAudioContentLinkHoverColor,
+		$formatAudioMetaColor,
+		$formatAudioMetaBgColor,
+		$formatAudioMetaLinkColor,
+		$formatAudioMetaLinkHoverColor);
+	
+	@include format-contents("chat", 
+		$formatChatTitleColor,
+		$formatChatTitleBgColor,
+		$formatChatTitleLinkColor,
+		$formatChatTitleLinkHoverColor,
+		$formatChatContentColor,
+		$formatChatContentBgColor,
+		$formatChatContentLinkColor,
+		$formatChatContentLinkHoverColor,
+		$formatChatMetaColor,
+		$formatChatMetaBgColor,
+		$formatChatMetaLinkColor,
+		$formatChatMetaLinkHoverColor);
+	
+	@include format-contents("gallery", 
+		$formatGalleryTitleColor,
+		$formatGalleryTitleBgColor,
+		$formatGalleryTitleLinkColor,
+		$formatGalleryTitleLinkHoverColor,
+		$formatGalleryContentColor,
+		$formatGalleryContentBgColor,
+		$formatGalleryContentLinkColor,
+		$formatGalleryContentLinkHoverColor,
+		$formatGalleryMetaColor,
+		$formatGalleryMetaBgColor,
+		$formatGalleryMetaLinkColor,
+		$formatGalleryMetaLinkHoverColor);
+	
+	@include format-contents("image", 
+		$formatImageTitleColor,
+		$formatImageTitleBgColor,
+		$formatImageTitleLinkColor,
+		$formatImageTitleLinkHoverColor,
+		$formatImageContentColor,
+		$formatImageContentBgColor,
+		$formatImageContentLinkColor,
+		$formatImageContentLinkHoverColor,
+		$formatImageMetaColor,
+		$formatImageMetaBgColor,
+		$formatImageMetaLinkColor,
+		$formatImageMetaLinkHoverColor);
+	
+	@include format-contents("link", 
+		$formatLinkTitleColor,
+		$formatLinkTitleBgColor,
+		$formatLinkTitleLinkColor,
+		$formatLinkTitleLinkHoverColor,
+		$formatLinkContentColor,
+		$formatLinkContentBgColor,
+		$formatLinkContentLinkColor,
+		$formatLinkContentLinkHoverColor,
+		$formatLinkMetaColor,
+		$formatLinkMetaBgColor,
+		$formatLinkMetaLinkColor,
+		$formatLinkMetaLinkHoverColor);
+	
+	@include format-contents("quote", 
+		$formatQuoteTitleColor,
+		$formatQuoteTitleBgColor,
+		$formatQuoteTitleLinkColor,
+		$formatQuoteTitleLinkHoverColor,
+		$formatQuoteContentColor,
+		$formatQuoteContentBgColor,
+		$formatQuoteContentLinkColor,
+		$formatQuoteContentLinkHoverColor,
+		$formatQuoteMetaColor,
+		$formatQuoteMetaBgColor,
+		$formatQuoteMetaLinkColor,
+		$formatQuoteMetaLinkHoverColor);
+	
+	@include format-contents("status", 
+		$formatStatusTitleColor,
+		$formatStatusTitleBgColor,
+		$formatStatusTitleLinkColor,
+		$formatStatusTitleLinkHoverColor,
+		$formatStatusContentColor,
+		$formatStatusContentBgColor,
+		$formatStatusContentLinkColor,
+		$formatStatusContentLinkHoverColor,
+		$formatStatusMetaColor,
+		$formatStatusMetaBgColor,
+		$formatStatusMetaLinkColor,
+		$formatStatusMetaLinkHoverColor);
+	
+	@include format-contents("video", 
+		$formatVideoTitleColor,
+		$formatVideoTitleBgColor,
+		$formatVideoTitleLinkColor,
+		$formatVideoTitleLinkHoverColor,
+		$formatVideoContentColor,
+		$formatVideoContentBgColor,
+		$formatVideoContentLinkColor,
+		$formatVideoContentLinkHoverColor,
+		$formatVideoMetaColor,
+		$formatVideoMetaBgColor,
+		$formatVideoMetaLinkColor,
+		$formatVideoMetaLinkHoverColor);
+	
+	
+
+
+
+
+	.format-status .entry-content .page-links a,
+	.format-gallery .entry-content .page-links a,
+	.format-chat .entry-content .page-links a,
+	.format-quote .entry-content .page-links a,
+	.page-links a {
+		color: $pageLinkColor;
+		background-color: $pageLinkBgColor;
+		border: 1px solid $pageLinkBorderColor;
+	}
+	.format-gallery .entry-content .page-links a:hover,
+	.format-audio .entry-content .page-links a:hover,
+	.format-status .entry-content .page-links a:hover,
+	.format-video .entry-content .page-links a:hover,
+	.format-chat .entry-content .page-links a:hover,
+	.format-quote .entry-content .page-links a:hover,
+	.page-links a:hover {
+		color: $pageLinkHoverColor;
+		background-color: $pageLinkHoverBgColor;
+	}
+
+	.page-links > span {
+		color: $pageLinkSelectedColor;
+		background-color: $pageLinkSelectedBgColor;
+	}
+	
+	.blog .format-aside:first-of-type,
+	.single .format-aside:first-of-type,
+	.format-aside + .format-aside,
+	.format-aside + .format-link,
+	.format-link + .format-aside {
+		box-shadow: inset 0 2px 2px $formatAsideBoxShowColor;
+	}
+	
+	/*
+	.attachment .hentry {
+		background-color: $color10;
+	}
+	.attachment .entry-meta a,
+	.attachment .entry-meta .edit-link:before,
+	.attachment .full-size-link:before {
+		color: $color18;
+	}
+	.navigation a {
+		color: $color20;
+	}
+	.navigation a:hover {
+		color: $color9;
+	}
+	.paging-navigation {
+		background-color: $color10;
+	}
+	.paging-navigation .meta-nav {
+		background-color: $color12;
+	}
+	.paging-navigation a:hover .meta-nav {
+		background-color: $color9;
+	}
+	.post-navigation {
+		color: $color18;
+	}
+	.single-format-status .author-description {
+		color: $color5;
+	}
+	.author-link {
+		color: $color18;
+	}
+	.archive-header {
+		background-color: $color10;
+	}
+	.page-header {
+		background-color: $color10;
+	}
+	.error404 .page-title:before {
+		color: $color10;
+	}
+	.error404 .page-wrapper {
+		background-color: $color10;
+	}
+	.comment-author .fn,
+	.comment-author .url,
+	.comment-reply-link,
+	.comment-reply-login {
+		color: $color20;
+	}
+	.comment-meta a:hover {
+		color: $color9;
+	}
+	.comment-respond {
+		background-color: $color5;
+	}
+	.comment-reply-title small a {
+		color: $color29;
+	}
+	.comment-reply-title small a:hover {
+		color: $color7;
+	}
+	.comment-form .required {
+		color: $color7;
+	}
+	.form-allowed-tags,
+	.form-allowed-tags code {
+		color: $color25;
+	}
+	.no-comments {
+		background-color: $color5;
+	}
+	.widget {
+		background-color: $color31;
+	}
+	.widget a {
+		color: $color20;
+	}
+	.widget a:hover {
+		color: $color9;
+	}
+	.site-footer {
+		background-color: $color10;
+		color: $color25;
+	}
+	.site-footer a {
+		color: $color25;
+	}
+	.site-footer .sidebar-container {
+		background-color: $color26;
+	}
+	.site-footer .widget a {
+		color: $color11;
+	}
+	.widget_calendar tbody .pad, .site-footer .widget_calendar tbody .pad {
+		background-color: transparent;
+	}
+	.site-footer .widget {
+		background: transparent;
+		color: #fff;
+	}
+	@media (max-width: 643px) {
+		.toggled-on .nav-menu li > ul a {
+			color: $color28;
+		}
+		.toggled-on .nav-menu li > ul {
+			background-color: transparent;
+		}
+		.toggled-on .nav-menu li:hover > a,
+		.toggled-on .nav-menu .children a {
+			background-color: transparent;
+			color: $color28;
+		}
+		.toggled-on .nav-menu li a:hover,
+		.toggled-on .nav-menu ul a:hover {
+			background-color: $color15;
+		}
+	}*/
+}

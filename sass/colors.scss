@@ -1,0 +1,96 @@
+@import "compass";
+@import 'partials/mixin';
+
+
+// green
+$bodyColor: #121312;
+$bodyLinkColor: #88ad25;
+$bodyLinkVisitedColor: #93931d;
+$bodyLinkHoverColor: #80cd45;
+
+// markup
+$markBgColor: #26d926;
+$insBgColor: #cdf5c9;
+
+// inputs
+$inputBorderColor: #c1d0be;
+$inputColor: #121312;
+$inputFocusBorderColor: #b0bfae;
+$inputBgColorGradientStart: #9ac43e;
+$inputBgColorGradientEnd: #97bb2f;
+$inputBottomBorderColor: #7f9e21;
+
+$inputHoverBgColorGradientStart: #a9d14d;
+$inputHoverBgColorGradientEnd: #a7c943;
+
+$inputActiveBgColorGradientStart: #97bb2f;
+$inputActiveBgColorGradientEnd: #7f9e21;
+$inputActiveBorderTopColor: #7f9e21;
+
+
+body {
+	color: $bodyColor;
+	a {
+		color: $bodyLinkColor;
+	}
+	a:visited {
+		color: $bodyLinkVisitedColor;
+	}
+	a:active,
+	a:hover {
+		color: $bodyLinkHoverColor;
+	}
+	mark {
+		background: $markBgColor;
+	}
+	ins {
+		background: $insBgColor;
+	}
+	button,
+	input,
+	textarea {
+		border: 2px solid $inputBorderColor;
+	}
+	input,
+	textarea {
+		color: $inputColor;
+	}
+	input:focus,
+	textarea:focus {
+		border: 2px solid $inputFocusBorderColor;
+	}
+	button,
+	input[type="submit"],
+	input[type="button"],
+	input[type="reset"] {
+		@include background ( 
+			linear-gradient(top, $inputBgColorGradientStart 0%, $inputBgColorGradientEnd 100%)
+		);
+		border: none;
+		border-bottom: 3px solid $inputBottomBorderColor;
+		color: #fff;
+	}
+	button:hover,
+	button:focus,
+	input[type="submit"]:hover,
+	input[type="button"]:hover,
+	input[type="reset"]:hover,
+	input[type="submit"]:focus,
+	input[type="button"]:focus,
+	input[type="reset"]:focus {
+		background: $inputHoverBgColorGradientStart;
+		@include background ( 
+			linear-gradient(top, $inputHoverBgColorGradientStart 0%, $inputHoverBgColorGradientEnd 100%)
+		);
+	}
+	button:active,
+	input[type="submit"]:active,
+	input[type="button"]:active,
+	input[type="reset"]:active {
+		background: $inputActiveBgColorGradientStart;
+		@include background ( 
+			linear-gradient(top, $inputActiveBgColorGradientStart 0%, $inputActiveBgColorGradientEnd 100%)
+		);
+		border-top: 3px solid $inputActiveBorderTopColor;
+	}
+}

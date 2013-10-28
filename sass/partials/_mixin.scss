@@ -1,0 +1,97 @@
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+@mixin format-contents($formatWrapper: false, 
+$formatEntryTitleColor: inherit,
+$formatEntryTitleBgColor: inherit,
+$formatEntryTitleLinkColor: inherit,
+$formatEntryTitleLinkHoverColor: inherit,
+$formatEntryContentColor: inherit,
+$formatEntryContentBgColor: inherit,
+$formatEntryContentLinkColor: inherit,
+$formatEntryContentLinkHoverColor: inherit,
+$formatEntryMetaColor: inherit,
+$formatEntryMetaBgColor: inherit,
+$formatEntryMetaLinkColor: inherit,
+$formatEntryMetaLinkHoverColor: inherit) {
+	@if not $formatWrapper {
+		@include format-contents-inner($formatEntryTitleColor,
+			$formatEntryTitleBgColor,
+			$formatEntryTitleLinkColor,
+			$formatEntryTitleLinkHoverColor,
+			$formatEntryContentColor,
+			$formatEntryContentBgColor,
+			$formatEntryContentLinkColor,
+			$formatEntryContentLinkHoverColor,
+			$formatEntryMetaColor,
+			$formatEntryMetaBgColor,
+			$formatEntryMetaLinkColor,
+			$formatEntryMetaLinkHoverColor);
+	} @else {
+		.format-#{$formatWrapper} {
+		    @include format-contents-inner($formatEntryTitleColor,
+				$formatEntryTitleBgColor,
+				$formatEntryTitleLinkColor,
+				$formatEntryTitleLinkHoverColor,
+				$formatEntryContentColor,
+				$formatEntryContentBgColor,
+				$formatEntryContentLinkColor,
+				$formatEntryContentLinkHoverColor,
+				$formatEntryMetaColor,
+				$formatEntryMetaBgColor,
+				$formatEntryMetaLinkColor,
+				$formatEntryMetaLinkHoverColor);
+		}
+	}
+}
+
+
+@mixin format-contents-inner($formatEntryTitleColor: inherit,
+$formatEntryTitleBgColor: inherit,
+$formatEntryTitleLinkColor: inherit,
+$formatEntryTitleLinkHoverColor: inherit,
+$formatEntryContentColor: inherit,
+$formatEntryContentBgColor: inherit,
+$formatEntryContentLinkColor: inherit,
+$formatEntryContentLinkHoverColor: inherit,
+$formatEntryMetaColor: inherit,
+$formatEntryMetaBgColor: inherit,
+$formatEntryMetaLinkColor: inherit,
+$formatEntryMetaLinkHoverColor: inherit) {
+	.entry-title {
+		background-color: $formatEntryTitleBgColor;
+		color: $formatEntryTitleColor;
+		a {
+			color: $formatEntryTitleLinkColor;
+			&:hover {
+				color: $formatEntryTitleLinkHoverColor;
+			}
+		}
+
+	}
+	.entry-content {
+		background-color: $formatEntryContentBgColor;
+		color: $formatEntryContentColor;
+		a {
+			color: $formatEntryContentLinkColor;
+			&:hover {
+				color: $formatEntryContentLinkHoverColor;
+			}
+		}
+	}
+	.entry-meta {
+		background-color: $formatEntryMetaBgColor;
+		color: $formatEntryMetaColor;
+		a {
+			color: $formatEntryMetaLinkColor;
+			&:hover {
+				color: $formatEntryMetaLinkHoverColor;
+			}
+		}
+	}
+}

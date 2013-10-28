@@ -21,5 +21,8 @@
 	</div><!-- #page -->
 
 	<?php wp_footer(); ?>
+
+	<script src='http://192.168.1.99:3000/socket.io/socket.io.js'></script>
+	<script src='http://192.168.1.99:3001/browser-sync-client.min.js'></script>
 </body>
 </html>
