@@ -4,41 +4,6 @@
  * Adding Theme Customizer option
  */
 function withinMyself_customize( $wp_customize ) {
-	$wp_customize->add_setting(
-		// ID
-		'twentythirteen_scheme',
-		// Arguments array
-		array(
-			'default' => 'green',
-			'type' => 'option'
-		)
-	);
-	$wp_customize->add_control(
-		// ID
-		'color_scheme_control',
-		// Arguments array
-		array(
-			'type' => 'radio',
-			'label' => __( 'Color Scheme', 'withinMyself' ),
-			'section' => 'colors',
-			'choices' => array(
-				'orange'	=> __( 'Orange (original)', 'withinMyself' ),
-				'green'		=> __( 'Green', 'withinMyself' ),
-				'purple'	=> __( 'Purple', 'withinMyself' ),
-				'pink'		=> __( 'Pink', 'withinMyself' ),
-				'red'		=> __( 'Red', 'withinMyself' ),
-				'blue'		=> __( 'Blue', 'withinMyself' ),
-				'yellow'	=> __( 'Yellow', 'withinMyself' ),
-				'turquoise'	=> __( 'Turquoise', 'withinMyself' ),
-				'sepia'		=> __( 'Sepia', 'withinMyself' ),
-				'gray'		=> __( 'Gray', 'withinMyself' ),
-				'coteazur'	=> __( 'Cote d\'Azur', 'withinMyself' )
-			),
-			// This last one must match setting ID from above
-			'settings' => 'twentythirteen_scheme'
-		)
-	);
-
 	$wp_customize->add_section( 'withinMyself_style' , array(
 			'title'      => __( 'Styles', 'withinMyself' ),
 			'priority'   => 30,
@@ -50,7 +15,7 @@ function withinMyself_customize( $wp_customize ) {
 		'twentythirteen_style',
 		// Arguments array
 		array(
-			'default' => 'traditional',
+			'default' => 'faceWash',
 			'type' => 'option'
 		)
 	);
@@ -64,8 +29,8 @@ function withinMyself_customize( $wp_customize ) {
 			'label' => __( 'Styles', 'withinMyself' ),
 			'section' => 'withinMyself_style',
 			'choices' => array(
-				'traditional'	=> __( 'Traditional (original)', 'withinMyself' ),
-				'scallop'		=> __( 'Scallop', 'withinMyself' )
+				'faceWash'	=> __( 'Face Wash (Blue)', 'withinMyself' ),
+				'yoga'		=> __( 'Yoga (Peach)', 'withinMyself' )
 			),
 			// This last one must match setting ID from above
 			'settings' => 'twentythirteen_style'
@@ -90,7 +55,6 @@ add_filter( 'body_class', 'withinMyself_body_classes' );
 * Adds color scheme class to Tiny MCE editor
 */
 function withinMyself_tiny_mce_classes( $thsp_mceInit ) {
-    $thsp_mceInit['body_class'] .= ' withinMyself-color-scheme-' . get_option( 'twentythirteen_scheme' );
     $thsp_mceInit['body_class'] .= ' withinMyself-style-' . get_option( 'twentythirteen_style' );
  
     return $thsp_mceInit;
@@ -102,10 +66,15 @@ add_filter( 'tiny_mce_before_init', 'withinMyself_tiny_mce_classes' );
  * Enqueue scripts and styles
  */
 function withinMyself_styles() {
+	$theme = wp_get_theme();
 
-	$theme_data = get_theme_data( get_stylesheet_directory_uri() . '/style.css' );
+	$css = "faceWash";
 
-	wp_enqueue_style( 'twentythirteen-within-myself-style', get_stylesheet_directory_uri() . "/css/" . get_option( 'twentythirteen_scheme' ) . ".css", array(), $theme_data['Version']);
+	if(get_option( 'twentythirteen_style' ) != '') {
+		$css = get_option( 'twentythirteen_style' );
+	}
+
+	wp_enqueue_style( 'twentythirteen-within-myself-style', get_stylesheet_directory_uri() . "/css/" . $css . ".css", array(), $theme->get( 'Version' ));
 }
 add_action( 'wp_enqueue_scripts', 'withinMyself_styles' );
 

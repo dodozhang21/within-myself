@@ -31,11 +31,19 @@ module.exports = function(grunt) {
         compass: {
             dist: {
                 options: {
-                    //config: 'config.rb'
                     sassDir: 'sass',
                     cssDir: 'css',
-                    //specify: 'sass/**/*.scss',
-                    outputStyle: 'expanded'
+                    //specify: '*.scss',
+                    outputStyle: 'nested'
+                }
+            }
+			,
+            style: {
+                options: {
+                    //sassDir: 'sass',
+                    cssDir: './',
+                    specify: 'sass/style.scss',
+                    outputStyle: 'nested'
                 }
             }
         },
