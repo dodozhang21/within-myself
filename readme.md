@@ -1,7 +1,7 @@
-TODO
+# TODO
 
-#Git repo commands
-#Local development
+# Git repo https://github.com/dodozhang21/within-myself
+# Local development
  - Install nodejs http://nodejs.org/
  - Install sass + compass http://sass-lang.com/
 	- Install ruby
