@@ -31,7 +31,7 @@ module.exports = function(grunt) {
         compass: {
             dist: {
                 options: {
-                    sassDir: 'sass',
+                    sassDir: 'sass/styles',
                     cssDir: 'css',
                     //specify: '*.scss',
                     outputStyle: 'nested'

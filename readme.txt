@@ -10,5 +10,6 @@ TODO
  - Install grunt
 	- npm install -g grunt-cli
 	- npm install
+	- grunt
  - Run Grunt
 	- grunt local

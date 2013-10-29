@@ -19,32 +19,42 @@ template: twentythirteen
 /* =========================================================================
  *   OVERWRITE styles
  * ========================================================================= */
-/* fix bug */
-body .entry-title {
-	word-wrap: break-word;
-}
-/* use icon font for the search icon */
-body .site-header .search-field {
-	background-image: none;
-}
-body .search-form .screen-reader-text {
-	clip: auto;
-	text-indent: -9999px;
-}
-body .search-form .screen-reader-text:before {
-	-webkit-font-smoothing: antialiased;
-	font-family: 'Genericons';
-	text-decoration: inherit;
-	font-weight: normal;
-	font-style: normal;
-	vertical-align: top;
-	text-indent: 0;
 
-	content: '\f400';
-	position: absolute;
-	top: .5rem;
-	left: .4rem;
-	font-size: 1.8rem;
-	line-height: 1;
-	z-index: 1;
+body {
+	// fix bug
+	.entry-title {
+		word-wrap: break-word;
+	}
+
+	.site-header {
+		.search-field {
+			background-image: none;
+		}
+	}
+
+	//use icon font for the search icon
+	.search-form {
+		.screen-reader-text {
+			clip: auto;
+			text-indent: -9999px;
+			cursor: pointer;
+			&:before {
+				-webkit-font-smoothing: antialiased;
+				font-family: 'Genericons';
+				text-decoration: inherit;
+				font-weight: normal;
+				font-style: normal;
+				vertical-align: top;
+				text-indent: 0;
+
+				content: '\f400';
+				position: absolute;
+				top: .5rem;
+				left: .4rem;
+				font-size: 1.8rem;
+				line-height: 1;
+				z-index: 1;
+			}
+		}
+	}
 }
