@@ -76,7 +76,7 @@ function withinMyself_styles() {
 
 	wp_enqueue_style( 'twentythirteen-within-myself-style', get_stylesheet_directory_uri() . "/css/" . $css . ".css", array(), $theme->get( 'Version' ));
 }
-add_action( 'wp_enqueue_scripts', 'withinMyself_styles' );
+add_action( 'wp_enqueue_scripts', 'withinMyself_styles', 42 );
 
 /*
  * Replace header images based on active color scheme

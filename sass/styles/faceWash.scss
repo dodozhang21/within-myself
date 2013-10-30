@@ -1,18 +1,21 @@
 @import '../partials/mixin';
+@import '../partials/springBeauty';
 
 // green
 $bodyColor: #121312;
-$bodyLinkColor: #88ad25;
+$bodyLinkColor: #AA588C;
 $bodyLinkVisitedColor: #93931d;
 $bodyLinkHoverColor: #80cd45;
+$bodyBorderColor: transparent; //for wide screen
 
 // markup
 $markBgColor: #26d926;
 $insBgColor: #cdf5c9;
 
 // input
-$inputBorderColor: #c1d0be;
 $inputColor: #121312;
+$inputBgColor: rgba(#fff, .5);
+$inputBorderColor: #c1d0be;
 $inputFocusBorderColor: #b0bfae;
 $inputPlaceholderColor: #707a6f;
 
@@ -34,8 +37,8 @@ $captionBgColor: inherit;
 $homeLinkColor: #121312;
 
 // menu
-$menuBgColor: #eaf4e9;
-$menuLinkColor: #121312;
+$menuBgColor: #AA588C;
+$menuLinkColor: #E7F4EF;
 $menuHoverBgColor: #1f1e11;
 $menuHoverColor: #fff;
 
@@ -43,11 +46,15 @@ $subMenuBgColor: #1f1e11;
 $subMenuBorderColor: #eaf4e9;
 $subMenuHoverBgColor: #a5c148;
 
-$menuSelectedItemColor: #82a124;
+$menuSelectedItemColor: #FEDC94;
 
 // search
-$searchFieldFocusBorderColor: #b0bfae;
-$searchIconColor: red;
+$searchFieldBgColor: #AA588C;
+$searchFieldFocusBorderColor: #AA588C;
+$searchFieldFocusBgColor: #FBDEA0;
+$searchFieldFocusColor: #fff;
+$searchIconColor: #fff;
+$searchIconFocusColor: #000;
 
 // page links
 $pageLinkColor: inherit;
@@ -223,8 +230,38 @@ $formatVideoMetaBgColor: inherit;
 $formatVideoMetaLinkColor: inherit;
 $formatVideoMetaLinkHoverColor: inherit;
 
+// widget
+$widgetColor: #763D61;
+$widgetBgColor: #ECF7C5;
+$widgetLinkColor: #17530D;
+$widgetLinkHoverColor: #97bb2f;
+$widgetCalendarLinkHoverBgColor: transparent;
 
+// comments
+$commentFormColor: inherit;
+$commentFormBgColor: #FBDEA0;
+$commentReplyLinkColor: inherit;
+$commentMetaLinkColor: inherit;
+$commentMetaLinkHoverColor: inherit;
+$commentReplyTitleColor: inherit;
+$commentReplyTitleLinkColor: inherit;
+$commentReplyTitleLinkHoverColor: inherit;
+$commentFormRequiredColor: red;
+$commentFormTagsColor: inherit;
+$commentsNoCommentsBgColor: inherit;
 
+// footer
+$footerBgColor: #AA588C;
+$footerColor: #fff;
+$footerLinkColor: #E7F4EF;
+$footerLinkHoverColor: #fff;
+$footerSidebarContainerBgColor: rgba(#000, .3);
+$footerWidgetBgColor: transparent;
+$footerWidgetLinkColor: #E7F4EF;
+$footerWidgetLinkHoverColor: #fff;
+$footerSearchBorderColor: rgba(#fff, .5);
+$footerSearchBgColor: rgba(#fff, .5);
+$footerSearchColor: #000;
 
 body {
 	color: $bodyColor;
@@ -251,7 +288,8 @@ body {
 	}
 	input,
 	textarea {
-		color: $inputColor;
+	    color: $inputColor;
+        background-color: $inputBgColor;
 	}
 	input:focus,
 	textarea:focus {
@@ -292,8 +330,8 @@ body {
 		border-top: 3px solid $buttonActiveBorderTopColor;
 	}
 	@include input-placeholder {
-            color: $inputPlaceholderColor;
-        }
+        color: $inputPlaceholderColor;
+    }
 	
 	.wp-caption .wp-caption-text,
 	.entry-caption,
@@ -301,6 +339,10 @@ body {
 		color: $captionColor;
 		background-color: $captionBgColor;
 	}
+
+    .site {
+      border-color: $bodyBorderColor;
+    }
 	
 	.site-header .home-link {
 		color: $homeLinkColor;
@@ -332,13 +374,22 @@ body {
 	}
 	.navbar {
 		background-color: $menuBgColor;
+      .search-field {
+        background-color:$searchFieldBgColor;
+        &:focus {
+          color:$searchFieldFocusColor;
+          background-color:$searchFieldFocusBgColor;
+          border-color: $searchFieldFocusBorderColor;
+          & ~ span.screen-reader-text:before {
+            color: red;
+          }
+        }
+      }
+      .screen-reader-text:before {
+        color: $searchIconColor;
+      }
 	}
-	.site-header .search-field:focus {
-		border-color: $searchFieldFocusBorderColor;
-	}
-	.search-form .screen-reader-text:before {
-		color: $searchIconColor;
-	}
+
 	
 	// default
 	@include format-contents($formatEntryTitleColor,
@@ -519,7 +570,89 @@ body {
 	.format-link + .format-aside {
 		box-shadow: inset 0 2px 2px $formatAsideBoxShowColor;
 	}
-	
+
+
+    .widget {
+      color: $widgetColor;
+      background-color: $widgetBgColor;
+      a {
+        color: $widgetLinkColor;
+        &:hover {
+          color: $widgetLinkHoverColor;
+        }
+      }
+    }
+
+    .widget_calendar a {
+      &:hover {
+        background-color: $widgetCalendarLinkHoverBgColor;
+      }
+    }
+
+    .site-footer {
+      background-color: $footerBgColor;
+      color: $footerColor;
+      a {
+        color: $footerLinkColor;
+        &:hover {
+          color: $footerLinkHoverColor;
+        }
+      }
+      .sidebar-container {
+        background-color: $footerSidebarContainerBgColor;
+      }
+      .widget {
+        background-color: $footerWidgetBgColor;
+        a {
+          color: $footerWidgetLinkColor;
+          &:hover {
+            color: $footerWidgetLinkHoverColor;
+          }
+        }
+      }
+      .search-field {
+        border-color: $footerSearchBorderColor;
+        background-color: $footerSearchBgColor;
+        color: $footerSearchColor;
+      }
+    }
+
+    .comment-respond {
+      color: $commentFormColor;
+      background-color: $commentFormBgColor;
+    }
+    .comment-author .fn,
+    .comment-author .url,
+    .comment-reply-link,
+    .comment-reply-login {
+      color: $commentReplyLinkColor;
+    }
+    .comment-meta a {
+      color: $commentMetaLinkColor;
+      &:hover {
+        color: $commentMetaLinkHoverColor;
+      }
+    }
+    .comment-reply-title {
+      color: $commentReplyTitleColor;
+      small a {
+        color: $commentReplyTitleLinkColor;
+        &:hover {
+          color: $commentReplyTitleLinkHoverColor;
+        }
+      }
+    }
+    .comment-form .required {
+      color: $commentFormRequiredColor;
+    }
+    .form-allowed-tags,
+    .form-allowed-tags code {
+      color: $commentFormTagsColor;
+    }
+    .no-comments {
+      background-color: $commentsNoCommentsBgColor;
+    }
+
 	/*
 	.attachment .hentry {
 		background-color: $color10;
@@ -565,63 +698,9 @@ body {
 	.error404 .page-wrapper {
 		background-color: $color10;
 	}
-	.comment-author .fn,
-	.comment-author .url,
-	.comment-reply-link,
-	.comment-reply-login {
-		color: $color20;
-	}
-	.comment-meta a:hover {
-		color: $color9;
-	}
-	.comment-respond {
-		background-color: $color5;
-	}
-	.comment-reply-title small a {
-		color: $color29;
-	}
-	.comment-reply-title small a:hover {
-		color: $color7;
-	}
-	.comment-form .required {
-		color: $color7;
-	}
-	.form-allowed-tags,
-	.form-allowed-tags code {
-		color: $color25;
-	}
-	.no-comments {
-		background-color: $color5;
-	}
-	.widget {
-		background-color: $color31;
-	}
-	.widget a {
-		color: $color20;
-	}
-	.widget a:hover {
-		color: $color9;
-	}
-	.site-footer {
-		background-color: $color10;
-		color: $color25;
-	}
-	.site-footer a {
-		color: $color25;
-	}
-	.site-footer .sidebar-container {
-		background-color: $color26;
-	}
-	.site-footer .widget a {
-		color: $color11;
-	}
-	.widget_calendar tbody .pad, .site-footer .widget_calendar tbody .pad {
-		background-color: transparent;
-	}
-	.site-footer .widget {
-		background: transparent;
-		color: #fff;
-	}
+
+
+
 	@media (max-width: 643px) {
 		.toggled-on .nav-menu li > ul a {
 			color: $color28;
