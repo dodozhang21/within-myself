@@ -1,5 +1,8 @@
 # TODO
 
+font-family: Cambria, Georgia, serif;
+http://joelcrawfordsmith.com/new/font/cambria
+
 ### Git repo 
  - https://github.com/dodozhang21/within-myself
 
